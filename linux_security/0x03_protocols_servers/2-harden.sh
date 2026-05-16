@@ -1,2 +1,2 @@
 #!/bin/bash
-find / -type d -perm -002 2>/dev/null -exec sh -c 'chmod o-w "$1" && echo "$1"' _ {} \;
+find / -xdev -type d -perm -0002 -exec chmod o-w {} + -print 2>/dev/null
